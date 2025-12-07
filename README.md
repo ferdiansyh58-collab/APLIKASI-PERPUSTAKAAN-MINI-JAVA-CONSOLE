@@ -1,140 +1,191 @@
-Laporan Aplikasi Mini Berbasis Java Console
-(Pemrograman Berorientasi Objek – PBO)
-
 👤 Developer
 Nama    : Ferdi Ardiansyah
 NIM     : 1003250050
 Kelas   : Pemrograman Berorientasi Objek
 
- BAB I – PENDAHULUAN
-1.1 Latar Belakang
+Aplikasi Console Java – Mini System
+(Perpustakaan, KRS, dan Vending Machine)
 
-Perkembangan teknologi mendorong kebutuhan akan sistem yang terstruktur dalam berbagai bidang, seperti pengelolaan perpustakaan, pengisian KRS, dan transaksi penjualan.
-Proyek ini dibuat untuk memodelkan sistem tersebut dalam bentuk aplikasi berbasis console menggunakan Java dengan pendekatan Pemrograman Berorientasi Objek (PBO).
-
-1.2 Tujuan Proyek
-
-Tujuan pembelajaran dari proyek ini adalah:
-Memahami konsep class dan object
-Menerapkan constructor dan constructor overloading
-Menggunakan enkapsulasi (private, getter, setter)
-Mengelola data menggunakan ArrayList
-Mengimplementasikan method dengan parameter dan return value
-
- BAB II – PERANCANGAN (DESIGN)
-2.1 Identifikasi Objek Utama
- **Sistem Perpustakaan**
-Class	Fungsi
-Book	Menyimpan data buku
-Member	Menyimpan data anggota
-Library	Mengelola buku dan anggota
-
- **Sistem KRS**
-Class	Fungsi
-Student	Menyimpan data mahasiswa
-Course	Menyimpan data mata kuliah
-KRS	Mengelola pengambilan mata kuliah
-
-**Sistem Vending Machine / Toko**
-Class	Fungsi
-Product	Menyimpan data produk
-VendingMachine	Mengelola stok produk
-Transaction	Mengelola transaksi
-
-2.2 Relasi Antar Class
-
-Contoh relasi has-a:
-Library ──> ArrayList<Book>
-KRS ──> ArrayList<Course>
-VendingMachine ──> ArrayList<Product>
-
- BAB III – IMPLEMENTASI
-3.1 Contoh Class (Book)
-private String id;
-private String judul;
-private String penulis;
-private boolean dipinjam;
-
-Atribut private → penerapan enkapsulasi
-Data diakses menggunakan getter dan setter
-
-3.2 Constructor & Overloading
-public Book() { }
-
-public Book(String id, String judul, String penulis) {
-    this.id = id;
-    this.judul = judul;
-    this.penulis = penulis;
-}
-
-3.3 Method dengan Parameter & Return
-public boolean isDipinjam() {
-    return dipinjam;
-}
-
-3.4 Penggunaan ArrayList
-private ArrayList<Book> daftarBuku = new ArrayList<>();
+Deskripsi Proyek
+Aplikasi ini adalah program berbasis console (terminal) menggunakan bahasa Java yang menerapkan konsep Pemrograman Berorientasi Objek (PBO).
+Program ini terdiri dari tiga sistem utama:
+1.	Sistem Manajemen Perpustakaan
+2.	Sistem KRS / Pengisian Mata Kuliah
+3.	Sistem Vending Machine / Toko Sederhana
 
 
-Digunakan untuk:
-add() → menambah data
-for-each → menampilkan data
-if → mencari data
-3.5 Alur Program Utama
-Mulai
-↓
-Tampilkan Menu
-↓
-Input User
-↓
-Proses Data
-↓
-Tampilkan Hasil
-↓
-Selesai
+Semua sistem dibuat untuk melatih penggunaan:
+•	Class dan Object
+•	Constructor dan Overloading
+•	Enkapsulasi (private, getter, setter)
+•	ArrayList
+•	Method dengan parameter & return value
 
- BAB IV – PENGUJIAN
-4.1 Skenario Pengujian
-No	Skenario	Hasil
-1	Menambah data	Berhasil
-2	Mencari data	Ditemukan
-3	Input tidak valid	Pesan error tampil
-4.2 Contoh Output
-Perpustakaan
-ID Buku : B001
-Judul   : The Last Earth
-Penulis : Tere Liye
-✅ Buku berhasil ditambahkan
+1. Sistem Perpustakaan
+Fitur:
+•	Tambah buku
+•	Tampilkan semua buku
+•	Cari buku berdasarkan ID
+•	Pinjam & kembalikan buku
+Class yang digunakan:
+•	Book
+•	Member
+•	Library
+•	LibraryApp
 
-KRS
-Kode MK : IF101
-Nama MK : Algoritma
-SKS     : 3
-✅ Mata kuliah berhasil ditambahkan
+2. Sistem KRS
+Fitur:
+•	Tambah mata kuliah
+•	Tampilkan daftar mata kuliah
+•	Cari mata kuliah
+•	Daftar mata kuliah default tersedia saat program berjalan
+Class yang digunakan:
+•	MataKuliah
+•	KRS
+•	KRSApp
+3. Sistem Vending Machine / Toko Sederhana
+Fitur:
+•	Tambah produk
+•	Tampilkan daftar produk
+•	Cari produk
 
-Vending Machine
-Produk : Teh Botol
-Harga  : 5000
-✅ Produk berhasil ditambahkan
+Class yang digunakan:
+•	Product
+•	VendingMachine
+•	VendingApp
+ Cara Menjalankan Program
+Syarat:
+•	Sudah terinstal JDK
+•	File .java berada dalam satu folder
 
- BAB V – KESIMPULAN
-5.1 Kesimpulan
-Dari proyek ini dapat disimpulkan bahwa konsep PBO membantu dalam menciptakan program yang terstruktur dan mudah dikembangkan.
+Compile: javac *.java
+Jalankan Program
 
-Konsep yang dipelajari:
-Class & Object
-Enkapsulasi
-Constructor
-ArrayList
-Method (parameter & return)
+Perpustakaan:
+java LibraryApp
+KRS:
+java KRSApp
+Vending Machine:
+java VendingApp
 
-5.2 Keterbatasan dan Pengembangan
+Konsep PBO yang Diterapkan:
+1.Class & Object
+2.Enkapsulasi
+3.Constructor
+4.Ovearloading
+5.Getter & Setter
+6.ArrayList
+7.Method Parameter
+8.Return Value
+Contoh Output
+Menampilkan Daftar Buku :
+=== MENU PERPUSTAKAAN ===
+1. Lihat daftar buku
+2. Tambah buku
+3. Pinjam buku
+4. Kembalikan buku
+0. Keluar
+Pilih menu: 1
 
-Keterbatasan:
-Belum menggunakan database
-Program hanya berjalan saat runtime
+=== Daftar Buku ===
+ID     : B001
+Judul  : The Last Earth
+Penulis: Tere Liye
+Status : Tersedia
+------------------------
+ID     : B002
+Judul  : Laskar Pelangi
+Penulis: Andrea Hirata
+Status : Tersedia
+------------------------
+Menambah Buku
+Pilih menu: 2
+Masukkan ID Buku : B002
+Judul Buku       : Laskar Pelangi
+Penulis          : Andrea Hirata
+Buku berhasil ditambahkan
 
-Rencana Pengembangan:
-Integrasi database (MySQL)
-Pembuatan GUI
-Versi berbasis Web
+Pinjam Buku
+Pilih menu: 3
+Masukkan ID Buku yang ingin dipinjam: B001
+Buku berhasil dipinjam
+
+Kembalikan Buku
+Pilih menu: 4
+Masukkan ID Buku yang ingin dikembalikan: B001
+Buku berhasil dikembalikan
+
+Input Menu Salah
+Pilih menu: 9
+Menu tidak tersedia
+
+Contoh Output – Sistem KRS
+Tampilkan Daftar Mata Kuliah :
+=== MENU KRS ===
+1. Lihat Mata Kuliah
+2. Tambah Mata Kuliah
+3. Cari Mata Kuliah
+0. Keluar
+Pilih menu: 1
+
+=== Daftar Mata Kuliah ===
+Kode MK : IF201
+Nama MK : Pemrograman Berorientasi Objek
+SKS     : 8
+-------------------------
+Kode MK : IF202
+Nama MK : Rekayasa Perangkat Lunak
+SKS     : 10
+-------------------------
+Kode MK : IF203
+Nama MK : Struktur Data
+SKS     : 8
+-------------------------
+
+Tambah Mata Kuliah
+Pilih menu: 2
+
+Kode MK : IF201
+Nama MK : Pemrograman Berorientasi Objek
+SKS     : 10
+Mata kuliah berhasil ditambahkan
+
+Cari Mata Kuliah
+Pilih menu: 3
+
+Masukkan Kode MK: IF201
+Mata kuliah ditemukan:
+Kode MK : IF201
+Nama MK : Pemrograman Berorientasi Objek
+SKS     : 10
+
+
+
+Contoh Output – Sistem Vending Machine / Toko
+Tampilkan Daftar Produk :
+=== MENU VENDING MACHINE ===
+1. Lihat Produk
+2. Beli Produk
+0. Keluar
+Pilih menu: 1
+=== Daftar Produk ===
+Produk : Aqua 1 LITER
+Harga  : 7500
+---------------------
+Produk : The Pucuk
+Harga  : 4500
+---------------------
+Beli Produk
+Pilih menu: 2
+Masukkan nama produk: Teh Pucuk
+Produk ditemukan:
+Produk : The Pucuk
+Harga  : 4500
+Keterbatasan Program
+•	Data belum tersimpan ke database
+•	Data hilang saat program ditutup
+
+ Rencana Pengembangan
+•	Menambahkan database MySQL
+•	Membuat versi GUI
+•	Membuat versi Web
